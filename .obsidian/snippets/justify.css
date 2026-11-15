@@ -1,0 +1,23 @@
+/* Justifica somente prosa. Tabelas, índices, código e gráficos mantêm o
+   alinhamento próprio; nenhuma regra é aplicada ao contêiner do editor. */
+.markdown-rendered :is(p, li, blockquote):not(:where(
+  table *, .toc *, .table-of-contents *,
+  [data-callout="indice"] *, [data-callout="summary"] *, [data-callout="toc"] *,
+  [data-callout="float-right"] *, .mermaid *, .block-language-mermaid *,
+  .chart-container *, .block-language-chart *, .moc-dashboard *
+)) {
+  text-align: justify;
+  text-align-last: auto;
+  text-justify: inter-word;
+  hyphens: none;
+}
+
+.markdown-source-view.mod-cm6 .cm-line:not(
+  .HyperMD-header, .HyperMD-codeblock, .HyperMD-table-row,
+  .HyperMD-frontmatter, .HyperMD-hr, .HyperMD-quote, .cm-embed-block
+):not(:where(.cm-table-widget *, .moc-dashboard *)) {
+  text-align: justify;
+  text-align-last: auto;
+  text-justify: inter-word;
+  hyphens: none;
+}

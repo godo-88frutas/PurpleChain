@@ -1,0 +1,688 @@
+/* ==========================================================================
+   1. PALETA GLOBAL · PURPLE PREMIUM, LAVANDA, PRETO & BRANCO (SEM ROSA/VERDE)
+   ========================================================================== */
+body,
+body.theme-dark,
+body.theme-light {
+  /* Substituição das cores aberrantes do sistema por tons lavanda/roxo/neutros */
+  --color-red-rgb: 166, 130, 168;
+  --color-red: #a682a8;
+  --color-orange-rgb: 158, 149, 181;
+  --color-orange: #9e95b5;
+  --color-yellow-rgb: 184, 176, 204;
+  --color-yellow: #b8b0cc;
+  --color-green-rgb: 143, 136, 168;
+  --color-green: #8f88a8;
+  --color-cyan-rgb: 150, 144, 180;
+  --color-cyan: #9690b4;
+  --color-blue-rgb: 133, 121, 184;
+  --color-blue: #8579b8;
+  --color-purple-rgb: 149, 128, 214;
+  --color-purple: #9580d6;
+  --color-pink-rgb: 184, 168, 237;
+  --color-pink: #b8a8ed;
+
+  /* Acentos e destaques discretos */
+  --interactive-accent: #7c63c4;
+  --interactive-accent-hover: #9179d6;
+  --text-accent: var(--link-color);
+  --text-accent-hover: var(--link-color);
+  --link-color-hover: var(--link-color);
+  --link-external-color: var(--link-color);
+  --link-external-color-hover: var(--link-color);
+  --link-unresolved-color: var(--link-color);
+
+  /* Tags, cabeçalhos, citações e listas */
+  --tag-color: #b8a8ed;
+  --tag-background: rgba(184, 168, 237, 0.12);
+  --tag-background-hover: rgba(184, 168, 237, 0.22);
+  --h1-color: var(--text-normal);
+  --h2-color: var(--text-normal);
+  --h3-color: var(--text-normal);
+  --h4-color: var(--text-normal);
+  --h5-color: var(--text-normal);
+  --h6-color: var(--text-normal);
+  --inline-title-color: var(--text-normal);
+  --blockquote-border-color: #7c63c4;
+  --list-marker-color: #9690a4;
+  --checkbox-color: #7c63c4;
+  --checkbox-color-hover: #9580d6;
+
+  /* Sintaxe de código e gráficos sem verde/rosa neon */
+  --code-normal: #c9c4d2;
+  --code-comment: #716b80;
+  --code-function: #b8a8ed;
+  --code-important: #9580d6;
+  --code-keyword: #9580d6;
+  --code-operator: #9690a4;
+  --code-property: #c9c4d2;
+  --code-punctuation: #9690a4;
+  --code-string: #b8a8ed;
+  --code-tag: #9580d6;
+  --code-value: #dcd6f0;
+  --graph-line: rgba(184, 168, 237, 0.28);
+  --graph-node: #b8a8ed;
+  --graph-node-focused: #dcd6f0;
+  --graph-node-tag: #7c63c4;
+  --graph-node-attachment: #9690a4;
+
+  /* Destaques do menu lateral */
+  --pc-master-nav-accent: #9580d6;
+  --pc-master-nav-bg: rgba(149, 128, 214, 0.14);
+  --pc-master-nav-bg-hover: rgba(149, 128, 214, 0.22);
+}
+
+/* Neutraliza cores berrantes em callouts e ícone de status bar */
+.callout {
+  --callout-color: 184, 168, 237 !important;
+}
+
+.status-bar-item,
+.status-bar-item .svg-icon,
+.sync-status-icon.mod-success {
+  color: #9690a4 !important;
+}
+
+/* ==========================================================================
+   2. TEXTO E TABELAS
+   Tipografia e tabelas são definidas no tema macOS Tahoe; a justificação
+   de prosa fica em justify.css. SVG/canvas mantêm suas dimensões nativas.
+   ========================================================================== */
+
+/* ==========================================================================
+   3. MENU LATERAL · PASTAS OCULTAS E DESTAQUE DO ARTIGO PRINCIPAL
+   ========================================================================== */
+body :is(.nav-folder-title, .nn-navitem):is(
+  [data-path="TagsRoutes"],
+  [data-path="tmp"],
+  [data-path="MAC-PhD/09 META/90 Arquivo"],
+  [data-path="MAC-PhD/01 MOC/90 Arquivo"],
+  [data-path="MAC-PhD/02 Artigo/Artigo-Material"],
+  [data-path="/Users/phillous/Purplechain.vault/MAC-PhD/02 Artigo/Artigo-Material"],
+  [data-path$="/MAC-PhD/02 Artigo/Artigo-Material"],
+  [data-path$="/MAC-PhD/09 META/90 Arquivo"],
+  [data-path$="/MAC-PhD/01 MOC/90 Arquivo"]
+),
+body .nav-folder-title:is(
+  [data-path="TagsRoutes"],
+  [data-path="tmp"],
+  [data-path="MAC-PhD/09 META/90 Arquivo"],
+  [data-path="MAC-PhD/01 MOC/90 Arquivo"],
+  [data-path="MAC-PhD/02 Artigo/Artigo-Material"],
+  [data-path="/Users/phillous/Purplechain.vault/MAC-PhD/02 Artigo/Artigo-Material"],
+  [data-path$="/MAC-PhD/02 Artigo/Artigo-Material"],
+  [data-path$="/MAC-PhD/09 META/90 Arquivo"],
+  [data-path$="/MAC-PhD/01 MOC/90 Arquivo"]
+) + .nav-folder-children,
+body .nav-folder:has(> .nav-folder-title:is(
+  [data-path="TagsRoutes"],
+  [data-path="tmp"],
+  [data-path="MAC-PhD/09 META/90 Arquivo"],
+  [data-path="MAC-PhD/01 MOC/90 Arquivo"],
+  [data-path="MAC-PhD/02 Artigo/Artigo-Material"],
+  [data-path="/Users/phillous/Purplechain.vault/MAC-PhD/02 Artigo/Artigo-Material"],
+  [data-path$="/MAC-PhD/02 Artigo/Artigo-Material"]
+)) {
+  display: none !important;
+}
+
+body .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title[data-path="MAC-PhD/02 Artigo/Couto2026-Mastering-the-Rule.md"],
+body .nn-navigation-pane
+  .nn-navitem[data-path="MAC-PhD/02 Artigo/Couto2026-Mastering-the-Rule.md"] {
+  border-radius: 4px;
+  background-color: var(--pc-master-nav-bg) !important;
+  box-shadow: inset 2px 0 var(--pc-master-nav-accent) !important;
+}
+
+body .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title[data-path="MAC-PhD/02 Artigo/Couto2026-Mastering-the-Rule.md"]:hover,
+body .nn-navigation-pane
+  .nn-navitem[data-path="MAC-PhD/02 Artigo/Couto2026-Mastering-the-Rule.md"]:hover {
+  background-color: var(--pc-master-nav-bg-hover) !important;
+}
+
+/* ==========================================================================
+   4. MOC DASHBOARD (.moc-dashboard) · FONTES DO SISTEMA & LAYOUT FUNCIONAL
+   ========================================================================== */
+.moc-dashboard {
+  --moc-bg: #08070d;
+  --moc-panel: rgba(20, 17, 27, 0.92);
+  --moc-card: rgba(29, 25, 38, 0.94);
+  --moc-ink: #c9c4d2;
+  --moc-muted: #9690a4;
+  --moc-faint: #716b80;
+  --moc-accent: #b8a8ed;
+  --moc-border: rgba(184, 168, 237, 0.34);
+  --moc-wine: #9580d6;
+  --moc-type-draft: #8b74cf;
+  --moc-type-linkzettel: #7478c8;
+  --moc-type-zettel: #6f70d8;
+  --moc-type-literaturzettel: #9d7cd8;
+  --moc-type-stichwortzettel: #9c5ed3;
+  --moc-type-outros: #9585bd;
+  --file-line-width: 100%;
+  container: pc-moc / inline-size;
+  color: var(--moc-ink);
+  background-color: var(--moc-bg) !important;
+  background-image:
+    linear-gradient(rgba(8, 7, 13, 0.78), rgba(8, 7, 13, 0.92)),
+    var(--moc-bg-image, none) !important;
+  background-position: center top !important;
+  background-size: cover !important;
+  background-attachment: fixed !important;
+}
+
+.moc-dashboard,
+.moc-dashboard * {
+  text-shadow: none !important;
+}
+
+.moc-dashboard :is(.markdown-preview-sizer, .markdown-preview-section),
+.moc-dashboard.mod-cm6 :is(.cm-sizer, .cm-contentContainer, .cm-content, .cm-embed-block) {
+  box-sizing: border-box;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  margin-inline: 0 !important;
+  padding-inline: 0 !important;
+}
+
+.moc-dashboard :is(.inline-title, .mod-header, .embedded-backlinks) {
+  display: none !important;
+}
+
+.moc-dashboard .block-language-dataviewjs,
+.moc-dashboard .block-language-dataviewjs > div {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.moc-dashboard .tese-mesa {
+  display: grid;
+  gap: 24px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: clamp(16px, 2vw, 28px);
+}
+
+/* Abas e Cabeçalho */
+.moc-dashboard .tese-pasta,
+.moc-dashboard .tese-carta,
+.moc-dashboard .tese-manuskript {
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.moc-dashboard .tese-abas {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.moc-dashboard .tese-aba,
+.moc-dashboard .tese-pagina-botao {
+  appearance: none;
+  padding: 6px 10px;
+  border: 1px solid var(--moc-border);
+  border-radius: 0;
+  color: var(--moc-muted);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  background: transparent;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.moc-dashboard .tese-aba.ativa,
+.moc-dashboard :is(.tese-aba, .tese-pagina-botao):hover {
+  border-color: var(--moc-accent);
+  color: var(--moc-accent);
+}
+
+.moc-dashboard .tese-carta-cab {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--moc-border);
+}
+
+.moc-dashboard .tese-carta-titulo {
+  color: var(--moc-ink);
+  font-size: 18px;
+}
+
+.moc-dashboard :is(.tese-carta-faixa, .tese-estado, .tese-pagina-contador, .tese-legenda) {
+  color: var(--moc-muted);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+}
+
+/* Abertura · Capa e Lista de Capítulos */
+.moc-dashboard .tese-artigo-abertura {
+  display: grid;
+  grid-template-columns: 236px minmax(0, 1fr);
+  gap: clamp(16px, 2vw, 28px);
+  align-items: start;
+}
+
+.moc-dashboard .tese-artigo-capa {
+  width: 236px;
+  margin: 0;
+}
+
+.moc-dashboard .tese-artigo-capa img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.moc-dashboard :is(.tese-artigo-acoes, .tese-destaques-painel, .tese-destaques-grupos) {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+}
+
+.moc-dashboard :is(.art001-link-artigo, .art001-link-bibliografia) {
+  display: block;
+  padding: 9px 12px;
+  border: 1px solid var(--moc-border);
+  color: var(--moc-accent);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  background: transparent;
+}
+
+.moc-dashboard .tese-artigo-lista {
+  display: grid;
+  border-top: 1px solid var(--moc-border);
+}
+
+.moc-dashboard .art001-par-capitulo {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  gap: 10px;
+  align-items: center;
+  min-width: 0;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(184, 168, 237, 0.18);
+}
+
+.moc-dashboard .art001-link-capitulo {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--moc-ink);
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.moc-dashboard .art001-capitulo-atual {
+  color: var(--moc-accent);
+}
+
+.moc-dashboard .tese-estado-fechado {
+  color: var(--moc-faint);
+}
+
+.moc-dashboard .art001-link-quotes {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+}
+
+.moc-dashboard :is(img.tese-icone-quotes-img, img.tese-icone-status) {
+  display: block;
+  width: 18px !important;
+  height: 18px !important;
+  margin: 0;
+  border: 0;
+  object-fit: contain;
+  box-shadow: none;
+}
+
+/* Notas em Foco (Quadrados Funcionais) */
+.moc-dashboard .tese-carta > .tese-destaques {
+  margin-top: clamp(24px, 3vw, 36px);
+  padding-top: clamp(16px, 2vw, 24px);
+  border-top: 1px solid var(--moc-border);
+}
+
+.moc-dashboard .tese-destaques-abertura {
+  display: block;
+}
+
+.moc-dashboard .tese-destaques-capa {
+  display: none !important;
+}
+
+.moc-dashboard .tese-destaques-painel {
+  width: 100%;
+}
+
+.moc-dashboard .tese-destaques-intro,
+.moc-dashboard .tese-destaques-grupo-cabecalho,
+.moc-dashboard .tese-destaque-rodape {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.moc-dashboard :is(.tese-destaques-titulo, .tese-destaques-grupo-titulo) {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  color: var(--moc-ink) !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+}
+
+.moc-dashboard :is(.tese-destaques-contagem, .tese-destaques-grupo-contagem) {
+  color: var(--moc-muted);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+}
+
+.moc-dashboard .tese-destaques-grupo {
+  --moc-tipo-cor: var(--moc-type-outros);
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+}
+
+.moc-dashboard .tese-destaques-grupo[data-grupo="draft"] { --moc-tipo-cor: var(--moc-type-draft); }
+.moc-dashboard .tese-destaques-grupo[data-grupo="linkzettel"] { --moc-tipo-cor: var(--moc-type-linkzettel); }
+.moc-dashboard .tese-destaques-grupo[data-grupo="zettel"] { --moc-tipo-cor: var(--moc-type-zettel); }
+.moc-dashboard .tese-destaques-grupo[data-grupo="literaturzettel"] { --moc-tipo-cor: var(--moc-type-literaturzettel); }
+.moc-dashboard .tese-destaques-grupo[data-grupo="stichwortzettel"] { --moc-tipo-cor: var(--moc-type-stichwortzettel); }
+
+.moc-dashboard .tese-destaques-grupo-cabecalho {
+  padding-bottom: 6px;
+  border-bottom: 1px solid color-mix(in srgb, var(--moc-tipo-cor) 62%, transparent);
+}
+
+.moc-dashboard :is(.tese-destaques-grupo-titulo, .tese-destaques-grupo-contagem) {
+  color: var(--moc-tipo-cor) !important;
+}
+
+.moc-dashboard .tese-destaques-grade {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  align-items: stretch;
+}
+
+.moc-dashboard .tese-destaque-item {
+  display: grid;
+  grid-template-rows: auto minmax(2.4em, auto) minmax(4.2em, 1fr) auto;
+  align-self: stretch;
+  gap: 10px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  padding: 12px;
+  border: 1px solid color-mix(in srgb, var(--moc-tipo-cor) 58%, transparent);
+  border-inline-start: 3px solid var(--moc-tipo-cor);
+  background: color-mix(in srgb, var(--moc-tipo-cor) 8%, var(--moc-card));
+}
+
+.moc-dashboard .tese-destaque-topo {
+  display: grid;
+  grid-template-columns: auto auto minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+}
+
+.moc-dashboard .tese-destaque-motivo {
+  overflow: hidden;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.moc-dashboard .tese-destaque-link {
+  display: -webkit-box;
+  overflow: hidden;
+  color: var(--moc-ink);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.3;
+  text-decoration: none;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.moc-dashboard .tese-destaque-resumo {
+  display: -webkit-box;
+  min-height: 4.2em;
+  overflow: hidden;
+  color: var(--moc-muted);
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.moc-dashboard .tese-destaque-rodape {
+  flex-wrap: wrap;
+  align-self: end;
+  margin-top: auto;
+}
+
+.moc-dashboard :is(
+  .tese-destaque-marca,
+  .tese-destaque-indice,
+  .tese-destaque-motivo,
+  .tese-destaque-selo,
+  .tese-destaque-origem,
+  .tese-destaque-abrir
+) {
+  color: var(--moc-muted);
+  font-size: 9px;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+}
+
+.moc-dashboard :is(.tese-destaque-marca, .tese-destaque-indice, .tese-destaque-abrir) {
+  color: var(--moc-tipo-cor);
+}
+
+/* Aba 2 · Manuskript (Cartoteca e Fichas Paginadas) */
+.moc-dashboard .tese-manuskript-strip {
+  margin-bottom: 16px;
+  color: var(--moc-accent);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+}
+
+.moc-dashboard .tese-mesa.tese-mesa-landing .tese-cartoteca,
+.moc-dashboard .tese-cartoteca {
+  display: block !important;
+  width: 100% !important;
+}
+
+.moc-dashboard .tese-guias {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 14px !important;
+  margin-bottom: 14px !important;
+}
+
+.moc-dashboard .tese-fichas {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 14px !important;
+}
+
+.moc-dashboard .tese-mesa.tese-mesa-landing .tese-ficha,
+.moc-dashboard .tese-ficha {
+  display: grid !important;
+  grid-template-rows: auto minmax(0, 1fr) auto !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  height: 350px !important;
+  min-height: 350px !important;
+  max-height: 350px !important;
+  overflow: hidden !important;
+  border: 1px solid var(--moc-border) !important;
+  background: var(--moc-card) !important;
+}
+
+.moc-dashboard .tese-mesa.tese-mesa-landing .tese-ficha-estatica,
+.moc-dashboard .tese-ficha-estatica {
+  grid-template-rows: minmax(0, 1fr) !important;
+  height: 240px !important;
+  min-height: 240px !important;
+  max-height: 240px !important;
+}
+
+.moc-dashboard .tese-ficha-pagina {
+  display: grid;
+  place-content: center;
+  height: 100%;
+  padding: 16px;
+  text-align: center;
+}
+
+.moc-dashboard .tese-ficha-rosto-titulo {
+  color: var(--moc-ink);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.moc-dashboard :is(.tese-ficha-rosto-subtitulo, .tese-ficha-epigrafe) {
+  margin-top: 14px;
+  color: var(--moc-muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.moc-dashboard .tese-ficha-epigrafe span {
+  display: block;
+}
+
+.moc-dashboard :is(.tese-ficha-topo, .tese-ficha-rodape) {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--moc-border);
+}
+
+.moc-dashboard .tese-ficha-rodape {
+  justify-content: space-between;
+  border-top: 1px solid var(--moc-border);
+  border-bottom: 0;
+}
+
+.moc-dashboard .tese-ficha-n {
+  color: var(--moc-accent);
+  font-size: 10px;
+}
+
+.moc-dashboard .tese-ficha-titulo {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--moc-ink);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.moc-dashboard .tese-folha {
+  min-height: 0;
+  padding: 14px;
+  overflow: hidden;
+}
+
+.moc-dashboard .tese-folha-corpo {
+  height: 100%;
+  overflow-y: auto;
+  color: var(--moc-ink);
+  font-size: 13.5px;
+  line-height: 1.45;
+}
+
+.moc-dashboard .tese-folha-corpo :is(p, li) {
+  margin: 0 0 0.65em;
+  color: inherit !important;
+  text-align: justify !important;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
+.moc-dashboard .tese-folha-corpo :is(.callout, .callout-content) {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.moc-dashboard .tese-folha-corpo .callout-title {
+  display: none;
+}
+
+.moc-dashboard .tese-pagina-botao:disabled {
+  opacity: 0.28;
+  cursor: default;
+}
+
+.moc-dashboard .tese-legenda {
+  margin-top: 12px;
+  text-align: right;
+}
+
+/* Responsividade do Container */
+@container pc-moc (max-width: 900px) {
+  .moc-dashboard .tese-artigo-abertura {
+    grid-template-columns: 190px minmax(0, 1fr);
+  }
+  .moc-dashboard .tese-artigo-capa {
+    width: 190px;
+  }
+  .moc-dashboard .tese-fichas,
+  .moc-dashboard .tese-destaques-grade {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@container pc-moc (max-width: 620px) {
+  .moc-dashboard .tese-mesa {
+    padding: 14px;
+  }
+  .moc-dashboard .tese-artigo-abertura,
+  .moc-dashboard .tese-guias,
+  .moc-dashboard .tese-fichas,
+  .moc-dashboard .tese-destaques-grade {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  .moc-dashboard .tese-artigo-capa {
+    width: min(100%, 220px);
+    justify-self: center;
+  }
+}
