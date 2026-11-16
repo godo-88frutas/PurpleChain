@@ -9,15 +9,17 @@
   text-align: justify;
   text-align-last: auto;
   text-justify: inter-word;
+  word-spacing: normal;
   hyphens: none;
 }
 
 .markdown-source-view.mod-cm6 .cm-line:not(
   .HyperMD-header, .HyperMD-codeblock, .HyperMD-table-row,
-  .HyperMD-frontmatter, .HyperMD-hr, .HyperMD-quote, .cm-embed-block
+  .HyperMD-frontmatter, .HyperMD-hr, .cm-embed-block
 ):not(:where(.cm-table-widget *, .moc-dashboard *)) {
   text-align: justify;
   text-align-last: auto;
   text-justify: inter-word;
+  word-spacing: normal;
   hyphens: none;
 }

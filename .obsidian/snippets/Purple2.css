@@ -18,13 +18,13 @@ body.theme-light {
   --color-blue-rgb: 133, 121, 184;
   --color-blue: #8579b8;
   --color-purple-rgb: 149, 128, 214;
-  --color-purple: #9580d6;
-  --color-pink-rgb: 184, 168, 237;
-  --color-pink: #b8a8ed;
+  --color-purple: #a39daa;
+  --color-pink-rgb: 182, 177, 191;
+  --color-pink: #b6b1bf;
 
   /* Acentos e destaques discretos */
-  --interactive-accent: #7c63c4;
-  --interactive-accent-hover: #9179d6;
+  --interactive-accent: #8d8798;
+  --interactive-accent-hover: #a39daa;
   --text-accent: var(--link-color);
   --text-accent-hover: var(--link-color);
   --link-color-hover: var(--link-color);
@@ -33,9 +33,9 @@ body.theme-light {
   --link-unresolved-color: var(--link-color);
 
   /* Tags, cabeçalhos, citações e listas */
-  --tag-color: #b8a8ed;
-  --tag-background: rgba(184, 168, 237, 0.12);
-  --tag-background-hover: rgba(184, 168, 237, 0.22);
+  --tag-color: #b6b1bf;
+  --tag-background: rgba(182, 177, 191, 0.12);
+  --tag-background-hover: rgba(182, 177, 191, 0.22);
   --h1-color: var(--text-normal);
   --h2-color: var(--text-normal);
   --h3-color: var(--text-normal);
@@ -43,10 +43,10 @@ body.theme-light {
   --h5-color: var(--text-normal);
   --h6-color: var(--text-normal);
   --inline-title-color: var(--text-normal);
-  --blockquote-border-color: #7c63c4;
+  --blockquote-border-color: var(--pc-quote-border, #d2d2d7);
   --list-marker-color: #9690a4;
-  --checkbox-color: #7c63c4;
-  --checkbox-color-hover: #9580d6;
+  --checkbox-color: #8d8798;
+  --checkbox-color-hover: #a39daa;
 
   /* Sintaxe de código e gráficos sem verde/rosa neon */
   --code-normal: #c9c4d2;
@@ -67,14 +67,14 @@ body.theme-light {
   --graph-node-attachment: #9690a4;
 
   /* Destaques do menu lateral */
-  --pc-master-nav-accent: #9580d6;
-  --pc-master-nav-bg: rgba(149, 128, 214, 0.14);
-  --pc-master-nav-bg-hover: rgba(149, 128, 214, 0.22);
+  --pc-master-nav-accent: #a39daa;
+  --pc-master-nav-bg: rgba(163, 157, 170, 0.10);
+  --pc-master-nav-bg-hover: rgba(163, 157, 170, 0.16);
 }
 
 /* Neutraliza cores berrantes em callouts e ícone de status bar */
 .callout {
-  --callout-color: 184, 168, 237 !important;
+  --callout-color: 152, 152, 157 !important;
 }
 
 .status-bar-item,
@@ -685,4 +685,19 @@ body .nn-navigation-pane
     width: min(100%, 220px);
     justify-self: center;
   }
+}
+
+/* A aparência regular também vale para os nomes marcados como notas recentes.
+   Mantém a classe, os ícones e o comportamento do plugin de destaque. */
+body .workspace-split .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title,
+body .workspace-split .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title .nav-file-title-content,
+body .workspace-split .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title.pc-new-note-48h,
+body .workspace-split .workspace-leaf-content[data-type="file-explorer"]
+  .nav-file-title.pc-new-note-48h .nav-file-title-content,
+body .nn-navigation-pane .nn-navitem.pc-new-note-48h,
+body .nn-navigation-pane .nn-navitem.pc-new-note-48h .nn-navitem-name {
+  font-weight: 400 !important;
 }
